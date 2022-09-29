@@ -1,0 +1,40 @@
+﻿一、能够实现的功能
+1、脚本与用例文件分离
+2、能快快快速执行接口测试用例，并把响应结果，测试结果写入测试用例中
+	节省 99.99999% 的用例执行时间
+3、每次执行脚本，只会运行 未执行过 或者之前 执行失败 的用例，脚本可重复执行
+4、适用于绝大部分接口用例 （ 若不适用，需要修改脚本 )
+
+二、搭建环境（忽略）
+1、打开 python-3.10.0-amd64.exe 可执行程序
+	安装步骤 https://blog.csdn.net/weixin_49237144/article/details/122915089 
+	第 6 步 开始
+2、脚本文件目录下打开cmd
+	检查是否成功：
+	>  pip list
+	不报错则成功
+	然后
+	pip install openpyxl  
+	pip install requests
+（linux安装python : https://blog.csdn.net/immerseinstudy/article/details/123793720）
+	
+三、执行用例
+192.169.5.64
+cd  /opt/interfaceauto
+
+1、interfaceCase.xlsx 文件为要执行的用例，用例编写需要按照里面的模板来
+	复制  interfaceCase.xlsx 一份，并且重命名为 result.xlsx
+
+2、 输入    python310 interfaceTest.py
+	无异常报错，则成功
+3、执行完成，打开 result.xlsx
+
+四、其他说明
+1、若有新增企业接口，需要修改 interfaceTest.py 文件中的鉴权码
+2、用例中的请求头，pwd 明文，timestamp为空就行
+3、若请求头除账号、密码、时间戳外，还有其他参数，直接在表格requestHeader中加就行
+	
+	
+	
+	
+	
